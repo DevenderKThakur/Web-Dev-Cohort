@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter - 07</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    "
+  >
+  <!-- form containing phone number , password , textarea and submit button  -->
+    <form
+      method="get"
+      style="
+        width: 300px;
+        height: 250px;
+        border: 2px solid black;
+        padding: 10px;
+        background-color: crimson;
+        color: white;
+      "
+    >
+      <label for="">Phone Number</label>
+      <input type="number" required title="Enter number only" /><br />
+      <label for="">Password</label>
+      <input
+        type="password"
+        required
+        title="Password must be 8 character long containg lowercase and digits no special characters allowed"
+        name="password"
+        pattern="[a-z0-9]{8,}"
+      /><br />
+      <!-- textarea to write comments  -->
+      <textarea
+        name="text"
+        id=""
+        placeholder="Comments..."
+        rows="10"
+        cols="30"
+      ></textarea
+      ><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+  
+</html>

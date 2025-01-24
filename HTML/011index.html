@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter - 011</title>
+  </head>
+  <body>
+    <!-- form containg input for email and date and color  -->
+    <form action="" method="get">
+      <input type="text" placeholder="Enter your email " required />
+      <br />
+      <input type="date" name="" id="" required />
+      <br />
+      <input type="color" name="" id="" required />
+    </form>
+
+    <!-- canvas of width and height 400px with a reactangle drawn inside using javascript  -->
+    <canvas
+      id="canvas"
+      width="400"
+      height="400"
+      style="border: 1px solid black"
+    ></canvas>
+  </body>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+
+    const context = canvas.getContext("2d");
+
+    context.fillStyle = "skyblue";
+    context.strokeStyle = "crimson";
+    context.lineWidth = 2;
+
+    context.fillRect(50, 50, 200, 100);
+    context.strokeRect(50, 50, 200, 100);
+  </script>
+</html>

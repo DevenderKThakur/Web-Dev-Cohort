@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter - 10</title>
+  </head>
+  <body>
+    <div>
+      <p
+        id="first"
+        class="para"
+        style="
+          color: white;
+          font-family: monospace;
+          background-color: crimson;
+          padding: 1.2rem;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1rem;
+        "
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, sequi!
+      </p>
+      <a href="https://google.com" target="_blank" title="Link to google chrome"
+        >Google.com</a
+      ><br />
+      <input type="text" required placeholder="Enter your name " />
+      <p
+        data-username="firstname lastname"
+        data-email="xyz@gmail.com"
+        id="userInfo"
+        style="cursor: pointer"
+      >
+        User infor using data-* attribute
+      </p>
+    </div>
+  </body>
+  <script>
+    const userdata = document.getElementById("userInfo");
+
+    console.table([userdata.dataset.username, userdata.dataset.email]);
+  </script>
+</html>
