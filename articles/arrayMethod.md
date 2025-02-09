@@ -123,7 +123,7 @@ const arr = [1, 2, 3, [4, 5], [7, 8, 9]];
 
 const another_arr = arr.flat(Infinity);
 
-console.log(another_arr); // [1,2,3,4,5,6,7,8,9]
+console.log(another_arr); // [1,2,3,4,5,7,8,9]
 ```
 
 - isArray (checks that value given is an array or not )
