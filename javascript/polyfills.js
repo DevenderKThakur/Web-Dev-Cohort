@@ -57,6 +57,23 @@ if (!Array.prototype.myReduce) {
   };
 }
 
+if (!Array.prototype.myReverse) {
+  // reverse and array using myReverse
+  Array.prototype.myReverse = function () {
+    if (this.length === 0) {
+      return [];
+    }
+    let start = 0;
+    let end = this.length - 1;
+    while (start < end) {
+      [this[start], this[end]] = [this[end], this[start]];
+      start++;
+      end--;
+    }
+    return this;
+  };
+}
+
 const doubleArr = arr.myMap((item) => item * 2);
 
 const evenElement = arr.myFilter((item) => item % 2 === 0);
