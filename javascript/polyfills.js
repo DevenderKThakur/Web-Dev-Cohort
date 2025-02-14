@@ -74,6 +74,12 @@ if (!Array.prototype.myReverse) {
   };
 }
 
+if (!Array.prototype.myConcat) {
+  Array.prototype.myConcat = function (arr) {
+    return [...this, ...arr];
+  };
+}
+
 const doubleArr = arr.myMap((item) => item * 2);
 
 const evenElement = arr.myFilter((item) => item % 2 === 0);
