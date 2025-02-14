@@ -1,5 +1,3 @@
-const arr = [1, 2, 3, 4, 5, 6, 7];
-
 if (!Array.prototype.myForEach) {
   Array.prototype.myForEach = function (userFn) {
     for (let i = 0; i < this.length; i++) {
@@ -7,8 +5,6 @@ if (!Array.prototype.myForEach) {
     }
   };
 }
-
-// arr.myForEach((item)=>console.log(item))
 
 if (!Array.prototype.myMap) {
   Array.prototype.myMap = function (userFn) {
@@ -79,13 +75,3 @@ if (!Array.prototype.myConcat) {
     return [...this, ...arr];
   };
 }
-
-const doubleArr = arr.myMap((item) => item * 2);
-
-const evenElement = arr.myFilter((item) => item % 2 === 0);
-
-const element = arr.myFind((item) => item > 4);
-
-const sum = arr.myReduce((acc, currentval) => acc + currentval);
-
-console.log(sum);
