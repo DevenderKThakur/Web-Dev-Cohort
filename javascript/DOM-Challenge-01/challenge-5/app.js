@@ -38,6 +38,16 @@ let intervalId = null; // refrence to the setInteral
 
 let state = false; // state of the autoplay btn
 
+const transitionTime = 3;
+
+let remainigTime = transitionTime;
+
+let timerId = null;
+
+function updateTimerTiminig() {
+  timerDisplay.textContent = remainigTime;
+}
+
 nextBtn.addEventListener("click", function () {
   index += 1;
   if (index === images.length) {
@@ -60,15 +70,23 @@ autotPlayBtn.addEventListener("click", () => {
   if (!state) {
     state = true;
     autotPlayBtn.textContent = "Stop Auto Play";
+    remainigTime = transitionTime;
+    updateTimerTiminig();
     intervalId = setInterval(() => {
       index = (index + 1) % images.length;
       imgGallery.src = images[index].url;
       captionText.textContent = images[index].caption;
-      // timerDisplay.textContent = 
-    }, 2000);
+      remainigTime = transitionTime;
+    }, transitionTime * 1000);
+
+    timerId = setInterval(() => {
+      remainigTime--;
+      updateTimerTiminig();
+    }, 1000);
   } else {
     state = false;
     autotPlayBtn.textContent = "Start Auto Play";
     clearInterval(intervalId);
+    clearInterval(timerId);
   }
 });
