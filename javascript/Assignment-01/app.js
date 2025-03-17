@@ -1,7 +1,5 @@
 const random_text = document.getElementById("random-text");
 
-// 'https://api.freeapi.app/api/v1/public/cats/cat/random'
-
 const copyTextBtn = document.getElementById("copy-text-btn");
 
 const genrateQuoteBtn = document.getElementById("genrate-btn");
@@ -20,11 +18,7 @@ async function getData() {
   }
 }
 
-// API call
-genrateQuoteBtn.addEventListener("click", getData);
-
-// clippboard copy
-copyTextBtn.addEventListener("click", function () {
+function copyTextFromClipboard() {
   const text = random_text.textContent;
 
   navigator.clipboard
@@ -33,15 +27,25 @@ copyTextBtn.addEventListener("click", function () {
       alert("The Quote has been copied");
     })
     .catch((error) => console.log(error));
-});
+}
 
-// Share on twitter btn
-shareTwitterBtn.addEventListener("click", function () {
+function shareQuoteOnTwitter() {
   const text = random_text.textContent;
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     text
   )}`;
+  // console.log(text);
   window.open(twitterUrl, "_blank");
-});
+}
 
+// API call on click of the btn
+genrateQuoteBtn.addEventListener("click", getData);
+
+// clippboard copy
+copyTextBtn.addEventListener("click", copyTextFromClipboard);
+
+// Share on twitter btn
+shareTwitterBtn.addEventListener("click", shareQuoteOnTwitter);
+
+// Onload of the webpage call the API
 window.onload = getData;
