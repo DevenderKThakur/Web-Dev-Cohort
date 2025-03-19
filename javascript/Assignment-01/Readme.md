@@ -65,4 +65,4 @@ This project is a simple web application that allows users to:
 
 ---
 
-Made with ❤️ by Devender Kumar Thakur
+Made with ❤️ by Devender Kumar Thakur . 
