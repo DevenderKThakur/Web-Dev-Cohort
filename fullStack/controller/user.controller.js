@@ -77,7 +77,30 @@ const registerUser = async (req, res) => {
 };
 
 const verifyUser = async (req, res) => {
+  const { token } = req.params;
+
+  console.log(token);
+  if (!token) {
+    return res.status(400).json({
+      message: "Invalid Token",
+    });
+  }
+
+  const user = await User.findOne({ verificationToken: token });
+
+  if (!user) {
+    return res.status(400).json({
+      message: "Invalid Token",
+    });
+  }
+
+  user.isVerified = true;
+
+  user.verificationToken = undefined;
+
+  await user.save();
+
   
 };
 
-export { registerUser };
+export { registerUser, verifyUser };
