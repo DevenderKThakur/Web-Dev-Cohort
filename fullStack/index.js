@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 
 import cors from "cors";
 
+import db from "./utils/db.js";
+
 dotenv.config();
 
 const app = express();
@@ -33,5 +35,7 @@ app.get("/devender", (req, res) => {
     age: 22,
   });
 });
+
+db();
 
 app.listen(port, () => console.log("Server is listening at port", port));
